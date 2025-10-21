@@ -1,0 +1,50 @@
+[
+  {
+    "imagem": "assets/images/luz-livro.jpg",
+    "alt": "Foto do Projeto Luz da Leitura",
+    "badge": "Educação",
+    "titulo": "Projeto Luz da Leitura",
+    "descricao": "Incentiva a leitura e o acesso a livros em comunidades com pouca infraestrutura cultural, com bibliotecas itinerantes e rodas de leitura.",
+    "local": "Salvador - BA"
+  },
+  {
+    "imagem": "assets/images/crescer-saudavel.jpg",
+    "alt": "Foto do Projeto Crescer Saudável",
+    "badge": "Saúde",
+    "titulo": "Projeto Crescer Saudável",
+    "descricao": "Promove a saúde infantil com oficinas educativas sobre alimentação saudável e cuidados básicos para crianças e mães.",
+    "local": "Fortaleza - CE"
+  },
+  {
+    "imagem": "assets/images/agua-para-todos.jpeg",
+    "alt": "Foto do Projeto Água para Todos",
+    "badge": "Saneamento",
+    "titulo": "Projeto Água para Todos",
+    "descricao": "Promove o acesso à água potável em comunidades rurais, instalando sistemas de captação e filtragem para garantir saúde.",
+    "local": "Manaus - AM"
+  },
+  {
+    "imagem": "assets/images/mulher-tecendo.png",
+    "alt": "Foto do Projeto Tecendo Futuro",
+    "badge": "Geração de Renda",
+    "titulo": "Projeto Tecendo Futuro",
+    "descricao": "Oferece cursos de artesanato para mulheres, fortalecendo a autonomia econômica e a geração de renda.",
+    "local": "João Pessoa - PB"
+  },
+  {
+    "imagem": "assets/images/criancas-alegres.png",
+    "alt": "Foto do Projeto Brilho da Infância",
+    "badge": "Assistência Social",
+    "titulo": "Projeto Brilho da Infância",
+    "descricao": "Realiza atividades recreativas, culturais e educativas para crianças em abrigos, incentivando o desenvolvimento social.",
+    "local": "Curitiba - PR"
+  },
+  {
+    "imagem": "assets/images/semente.jpg",
+    "alt": "Foto do Projeto Sementes do Amanhã",
+    "badge": "Sustentabilidade",
+    "titulo": "Projeto Sementes do Amanhã",
+    "descricao": "Desenvolve hortas comunitárias e oficinas de agricultura sustentável para famílias urbanas.",
+    "local": "Porto Alegre - RS"
+  }
+]
