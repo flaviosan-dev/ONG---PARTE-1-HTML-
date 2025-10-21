@@ -1,6 +1,4 @@
-/* =================================== */
-/* 1. SISTEMA DE DESIGN (VARIÁVEIS)    */
-/* =================================== */
+
 :root {
   /* 1a. Cores (Paleta de 8+) */
   --cor-primaria: #4E8D7C;
@@ -83,7 +81,6 @@ ul { list-style: none; }
 /* 3. LAYOUT (GRID, HEADER, FOOTER)    */
 /* =================================== */
 
-/* --- Sistema de Grid 12 Colunas --- */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -98,15 +95,14 @@ ul { list-style: none; }
   gap: var(--spacing-md); /* 24px */
 }
 
-/* Colunas Padrão (Desktop) */
+
 .col-12 { grid-column: span 12; }
 .col-8 { grid-column: span 8; }
 .col-6 { grid-column: span 6; }
 .col-4 { grid-column: span 4; }
 .col-3 { grid-column: span 3; }
-/* Adicione .col-1, .col-2, .col-5, etc. se precisar */
 
-/* --- Cabeçalho --- */
+
 .cabeçalho {
   background-color: var(--cor-primaria);
   padding: var(--spacing-md) 0; /* 24px */
@@ -122,23 +118,23 @@ ul { list-style: none; }
   align-items: center;
 }
 
-/* (LOGO) Mude seu h1 no HTML para <p class="logo"> */
+
 .logo a {
   color: var(--cor-branca);
-  font-size: var(--font-size-md); /* 28px */
+  font-size: var(--font-size-md); 
   font-weight: bold;
 }
 
 .navegacao {
-  display: flex; /* Isso será para o desktop */
-  gap: var(--spacing-md); /* 24px */
+  display: flex; 
+  gap: var(--spacing-md); 
 }
 
 .navegacao a {
   color: var(--cor-branca);
-  font-size: var(--font-size-sm); /* 16px */
+  font-size: var(--font-size-sm); 
   font-weight: 500;
-  padding: var(--spacing-xs) var(--spacing-sm); /* 8px 16px */
+  padding: var(--spacing-xs) var(--spacing-sm); 
   border-radius: 5px;
   transition: var(--transition);
 }
@@ -179,22 +175,18 @@ ul { list-style: none; }
   transform: scale(1.2);
 }
 
-/* =================================== */
-/* 4. COMPONENTES (BOTÕES, CARDS, FORM)*/
-/* =================================== */
 
-/* --- Botões (com 4 estados) --- */
 .btn {
   display: inline-block;
-  padding: var(--spacing-sm) var(--spacing-md); /* 16px 24px */
+  padding: var(--spacing-sm) var(--spacing-md); 
   border-radius: 5px;
   font-weight: bold;
-  font-size: var(--font-size-sm); /* 16px */
+  font-size: var(--font-size-sm); 
   text-align: center;
   cursor: pointer;
   border: none;
   transition: var(--transition);
-  margin-top: var(--spacing-md); /* 24px */
+  margin-top: var(--spacing-md); 
 }
 
 .btn-primario {
@@ -202,24 +194,24 @@ ul { list-style: none; }
   color: var(--cor-branca);
 }
 
-/* :hover (mouse em cima) */
+
 .btn-primario:hover {
   background-color: var(--cor-acao-hover);
   transform: translateY(-3px);
 }
 
-/* :focus (navegação por teclado) */
+
 .btn-primario:focus {
   outline: 3px solid var(--cor-primaria);
   outline-offset: 2px;
 }
 
-/* :active (enquanto está sendo clicado) */
+
 .btn-primario:active {
   transform: translateY(-1px);
 }
 
-/* :disabled (botão desabilitado) */
+
 .btn-primario:disabled {
   background-color: var(--cor-borda);
   color: var(--cor-texto-suave);
@@ -227,7 +219,7 @@ ul { list-style: none; }
   transform: none;
 }
 
-/* --- Cards (Genérico) --- */
+
 .card {
   background-color: var(--cor-branca);
   border-radius: var(--border-radius);
@@ -236,7 +228,7 @@ ul { list-style: none; }
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  height: 100%; /* Faz os cards terem a mesma altura no grid */
+  height: 100%; 
 }
 
 .card:hover {
@@ -251,14 +243,14 @@ ul { list-style: none; }
 }
 
 .card-body {
-  padding: var(--spacing-md); /* 24px */
-  flex-grow: 1; /* Faz o corpo crescer para preencher espaço */
+  padding: var(--spacing-md); 
+  flex-grow: 1; 
   display: flex;
   flex-direction: column;
 }
 
 .card-body p {
-  flex-grow: 1; /* Empurra o botão/link para baixo */
+  flex-grow: 1; 
 }
 
 .card h3 {
@@ -266,10 +258,10 @@ ul { list-style: none; }
   margin-bottom: var(--spacing-sm);
 }
 
-/* --- Formulários (com Validação) --- */
+
 .form-section {
   max-width: 800px;
-  margin: var(--spacing-xl) auto; /* 48px */
+  margin: var(--spacing-xl) auto; 
   padding: var(--spacing-xl);
   background-color: var(--cor-branca);
   box-shadow: var(--box-shadow);
@@ -308,7 +300,7 @@ input[type="date"],
 select,
 textarea {
   width: 100%;
-  padding: var(--spacing-sm); /* 16px */
+  padding: var(--spacing-sm); 
   font-size: var(--font-size-sm);
   border: 1px solid var(--cor-borda);
   border-radius: 5px;
@@ -324,7 +316,7 @@ textarea:focus {
   box-shadow: 0 0 0 3px rgba(78, 141, 124, 0.2);
 }
 
-/* Validação Visual */
+
 input:invalid:not(:placeholder-shown),
 select:invalid:not(:placeholder-shown) {
   border-color: var(--cor-erro);
@@ -356,13 +348,13 @@ input[type="radio"] {
 }
 
 .botao-submit {
-  /* Herda de .btn e .btn-primario */
+ 
   width: 100%;
   font-size: var(--font-size-base); /* 18px */
   padding: var(--spacing-sm);
 }
 
-/* --- Badges/Tags (Novo Componente) --- */
+
 .badge {
   display: inline-block;
   padding: var(--spacing-xs) var(--spacing-sm); /* 8px 16px */
@@ -374,10 +366,7 @@ input[type="radio"] {
   border: 1px solid var(--cor-primaria);
 }
 
-/* =================================== */
-/* 5. NAVEGAÇÃO RESPONSIVA (MOBILE)    */
-/* =================================== */
-/* (Requer HTML e JS para funcionar) */
+
 
 .menu-hamburger {
   display: none; /* Escondido no desktop */
@@ -398,7 +387,7 @@ input[type="radio"] {
   transition: var(--transition);
 }
 
-/* Animação do "X" do hambúrguer */
+
 .menu-hamburger.active .linha:nth-child(1) {
   transform: translateY(10.5px) rotate(45deg);
 }
@@ -409,7 +398,7 @@ input[type="radio"] {
   transform: translateY(-10.5px) rotate(-45deg);
 }
 
-/* Navegação Mobile (o menu que aparece) */
+
 .navegacao-mobile {
   display: flex;
   flex-direction: column;
@@ -417,12 +406,12 @@ input[type="radio"] {
   gap: var(--spacing-md);
   background-color: var(--cor-primaria);
   position: absolute;
-  top: 72px; /* Altura do header (ajuste conforme necessário) */
+  top: 72px; 
   left: 0;
   width: 100%;
   padding: var(--spacing-md);
   
-  /* Escondido por padrão */
+
   transform: translateY(-150%);
   opacity: 0;
   transition: var(--transition);
@@ -441,19 +430,10 @@ input[type="radio"] {
   text-align: center;
 }
 
-/* =================================== */
-/* 6. PÁGINAS ESPECÍFICAS              */
-/* =================================== */
 
-/* --- Página Inicial --- */
 .sessao-em-colunas {
   padding: var(--spacing-xxxl) 0; /* 80px */
 }
-
-/* DELETAR .coluna, .artigo-projeto, .depoimento, .membro-equipe 
-   pois todos foram substituídos pela classe .card 
-*/
-
 
 .titulo-secao {
   font-size: var(--font-size-lg);
@@ -470,7 +450,7 @@ input[type="radio"] {
   text-align: center;
 }
 
-/* Específico para Depoimentos */
+
 .depoimento img {
   width: 100px;
   height: 100px;
@@ -487,12 +467,12 @@ input[type="radio"] {
 }
 
 
-/* --- Página Sobre --- */
+
 .titulo-principal-sobre {
-  font-size: var(--font-size-xxl); /* 48px */
+  font-size: var(--font-size-xxl); 
 }
 .titulo-secao-sobre {
-  font-size: var(--font-size-lg); /* 36px */
+  font-size: var(--font-size-lg); 
   color: var(--cor-primaria);
   margin-bottom: var(--spacing-lg);
   text-align: center;
@@ -517,7 +497,8 @@ input[type="radio"] {
   height: 280px;
   object-position: center top;
 }
-/* --- Página Sobre --- */
+
+
 .dados-crescimento {
   background-color: var(--cor-secundaria);
   color: var(--cor-branca);
@@ -526,39 +507,31 @@ input[type="radio"] {
   margin-bottom: var(--spacing-xxl);
 }
 
-/* ADICIONE ESTA NOVA REGRA ABAIXO:
-  Isso fará com que os itens dentro do container da seção "dados-crescimento"
-  fiquem em linha (display: flex) e se separem com um espaçamento (gap).
-*/
+
 .dados-crescimento .container {
   display: flex;
-  flex-wrap: wrap; /* Permite quebrar a linha em telas muito pequenas */
-  justify-content: center; /* Centraliza os dois itens */
+  flex-wrap: wrap; 
+  justify-content: center; 
   align-items: center;
-  gap: var(--spacing-xl); /* Adiciona um espaço entre os dois itens */
+  gap: var(--spacing-xl); 
 }
 
-/* E adicione esta regra para remover a margem padrão dos parágrafos */
+
 .dados-crescimento .container p {
   margin: 0;
 }
 
-/* --- Página Projetos --- */
 
-/* == CORREÇÃO 1: O 'display: flex' foi movido para o .container abaixo == */
 .sessao-inicio-projeto {
-  /* display: flex; <-- Removido daqui */
-  /* align-items: center; <-- Removido daqui */
-  /* gap: var(--spacing-xl); <-- Removido daqui */
-  /* padding: var(--spacing-xxl); <-- Removido daqui */
-  padding: var(--spacing-xxxl) 0; /* Aplicado padding vertical */
+ 
+  padding: var(--spacing-xxxl) 0; 
   background-color: var(--cor-branca);
   border-radius: var(--border-radius);
   margin-top: var(--spacing-xl);
   margin-bottom: var(--spacing-xxxl);
 }
 
-/* ESTA É A NOVA REGRA ADICIONADA PARA CORRIGIR O LAYOUT */
+
 .sessao-inicio-projeto .container {
   display: flex;
   align-items: center;
@@ -573,10 +546,10 @@ input[type="radio"] {
   color: var(--cor-primaria);
 }
 .imagem-inicio {
-  flex-basis: 150px; /* <-- Mude de 300px para um valor menor. 150px é um bom tamanho "pequeno". */
+  flex-basis: 150px; 
 }
 
-/* Esta regra abaixo está perfeita, não mude */
+
 .img-inicio {
   width: 100%;
   border-radius: 50%;
@@ -612,36 +585,30 @@ input[type="radio"] {
   transform: scale(1.05);
 }
 
-/* =================================== */
-/* 7. RESPONSIVIDADE (5 BREAKPOINTS)   */
-/* =================================== */
 
-/* Breakpoint 1: Laptops (menor que 1200px) */
 @media (max-width: 1200px) {
   .container {
     width: 95%;
   }
 }
 
-/* Breakpoint 2: Tablets (menor que 992px) */
+
 @media (max-width: 992px) {
-  /* Grid de 12 colunas para Tablets */
+
   .col-lg-4 { grid-column: span 4; }
   .col-lg-6 { grid-column: span 6; }
   .col-lg-12 { grid-column: span 12; }
 
-  /* Ajustes */
+
   h1 { font-size: var(--font-size-xl); }
   h2 { font-size: 32px; } /* Ajuste */
 
-  /* == CORREÇÃO 2: A regra abaixo estava quebrando o layout em 992px, 
-     ela foi movida para o breakpoint de 768px. 
-     Em vez disso, mantemos o 'flex-direction: row' aqui. */
+ 
   .sessao-inicio-projeto .container {
-    flex-direction: row; /* Mantém lado a lado no tablet */
+    flex-direction: row; 
     text-align: left;
   }
-  /* A regra antiga de "column" foi removida daqui */
+
 
   .projeto, .projeto:nth-child(even) {
     grid-template-columns: 1fr;
@@ -652,31 +619,29 @@ input[type="radio"] {
   }
 }
 
-/* Breakpoint 3: Tablets (menor que 768px) */
+
 @media (max-width: 768px) {
-  /* Grid de 12 colunas para Tablets Menores */
+ 
   .col-md-6 { grid-column: span 6; }
   .col-md-8 { grid-column: span 8; }
   .col-md-12 { grid-column: span 12; }
 
-  /* ADICIONE ISTO: */
+
   .sessao-inicio-projeto .container {
-     flex-direction: column; /* Agora sim, quebra para o celular */
+     flex-direction: column; 
      text-align: center;
   }
 
-  /* == CORREÇÃO 3: A CHAVE } ESTAVA AQUI, FOI MOVIDA PARA O FIM DO BLOCO == */
-
-  /* Ativa o Menu Hambúrguer */
+ 
   .navegacao {
-    display: none; /* Esconde menu desktop */
+    display: none; 
   }
   .menu-hamburger {
-    display: flex; /* Mostra botão hambúrguer */
+    display: flex; 
   }
 
   body {
-    font-size: var(--font-size-sm); /* 16px */
+    font-size: var(--font-size-sm); 
   }
   h1 { font-size: 38px; }
   h2 { font-size: 28px; }
@@ -686,55 +651,53 @@ input[type="radio"] {
   .sessao-projetos, 
   .sessao-depoimentos, 
   .sessao-informacoes {
-    padding: var(--spacing-xxl) 0; /* 64px */
+    padding: var(--spacing-xxl) 0; 
   }
 
-} /* <== A CHAVE DE FECHAMENTO DO 768px FOI MOVIDA PARA CÁ */
+} 
 
 
-/* Breakpoint 6: Telas Extra-Grandes (maior que 1400px) */
+
 @media (min-width: 1400px) {
   .container {
-    /* A largura máxima padrão era 1200px. */
-    max-width: 1320px; /* Aumenta a largura do conteúdo */
+   
+    max-width: 1320px; 
   }
 
-  /* Opcional: Aumentar a fonte base para melhor legibilidade em telas grandes */
+
   body {
     font-size: 19px; 
   }
 }
 
-/* Breakpoint 7: Celulares Extra-Pequenos (menor que 375px) */
+
 @media (max-width: 375px) {
-  /* Reduz a fonte base para caber mais texto */
+
   body {
-    font-size: var(--font-size-sm); /* De 18px/16px para 16px */
+    font-size: var(--font-size-sm);
   }
 
-  /* Reduz os títulos principais */
+
   h1, .titulo-principal-sobre {
-    font-size: 28px; /* Era 32px no breakpoint anterior */
+    font-size: 28px; 
   }
   
   h2, .titulo-secao {
-    font-size: 22px; /* Era 24px */
+    font-size: 22px; 
   }
   
-  /* Reduz o padding dos cards e formulários para ganhar espaço */
+
   .card-body, .form-section {
-    padding: var(--spacing-sm); /* De 24px/32px para 16px */
+    padding: var(--spacing-sm); 
   }
 
-  /* Reduz o botão principal */
+
   .btn, .botao-submit {
-    padding: var(--spacing-sm); /* 16px */
-    font-size: var(--font-size-sm); /* 16px */
+    padding: var(--spacing-sm); 
+    font-size: var(--font-size-sm); 
   }
 }
-/* =================================== */
-/* 6A. COMPONENTE MODAL (AVISO)        */
-/* =================================== */
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -748,7 +711,7 @@ input[type="radio"] {
   align-items: center;
   justify-content: center;
   
-  /* Escondido por padrão */
+
   opacity: 0;
   visibility: hidden;
   transition: var(--transition);
@@ -767,7 +730,7 @@ input[type="radio"] {
   max-width: 500px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   
-  /* Efeito de "zoom" ao aparecer */
+
   transform: scale(0.9);
   transition: var(--transition);
 }
