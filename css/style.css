@@ -1,0 +1,797 @@
+/* =================================== */
+/* 1. SISTEMA DE DESIGN (VARIÁVEIS)    */
+/* =================================== */
+:root {
+  /* 1a. Cores (Paleta de 8+) */
+  --cor-primaria: #4E8D7C;
+  --cor-secundaria: #2D3748;
+  --cor-acao: #5CB85C;
+  --cor-acao-hover: #4a9a4a;
+  --cor-fundo: #F8F9FA;
+  --cor-branca: #FFFFFF;
+
+  /* Cores Neutras (Texto, Bordas, Sombras) */
+  --cor-texto-principal: #333333;
+  --cor-texto-secundario: #555555;
+  --cor-texto-suave: #777777;
+  --cor-borda: #CCCCCC;
+  --cor-fundo-input: #fdfdfd;
+  --cor-sombra: rgba(0, 0, 0, 0.08);
+
+  /* Cores de Feedback (para formulários e componentes) */
+  --cor-erro: #E53E3E;
+  --cor-sucesso: #38A169;
+
+  /* 1b. Tipografia (Hierarquia de 5+) */
+  --font-size-xxl: 48px;  /* Título principal da página */
+  --font-size-xl: 42px;   /* Título de seção grande */
+  --font-size-lg: 36px;   /* Título de seção */
+  --font-size-md: 28px;   /* Título de card/item */
+  --font-size-base: 18px; /* Texto principal (parágrafos) */
+  --font-size-sm: 16px;   /* Texto de botões, inputs, nav */
+  --font-size-xs: 14px;   /* Texto auxiliar (ex: badges) */
+
+  /* 1c. Espaçamento Modular (Base 8px) */
+  --spacing-xs: 8px;    /* 8px */
+  --spacing-sm: 16px;   /* 16px */
+  --spacing-md: 24px;   /* 24px */
+  --spacing-lg: 32px;   /* 32px */
+  --spacing-xl: 48px;   /* 48px */
+  --spacing-xxl: 64px;  /* 64px */
+  --spacing-xxxl: 80px; /* 80px (para seções grandes) */
+
+  /* 1d. Outras Variáveis */
+  --border-radius: 8px;
+  --box-shadow: 0 8px 16px var(--cor-sombra);
+  --transition: all 0.3s ease;
+}
+
+/* =================================== */
+/* 2. GERAL E TIPOGRAFIA               */
+/* =================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto-principal);
+  line-height: 1.6;
+  font-size: var(--font-size-base); /* Fonte base para parágrafos */
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  color: var(--cor-secundaria);
+}
+
+h1 { font-size: var(--font-size-xl); }
+h2 { font-size: var(--font-size-lg); }
+h3 { font-size: var(--font-size-md); }
+p { margin-bottom: var(--spacing-sm); }
+ul { list-style: none; }
+
+/* =================================== */
+/* 3. LAYOUT (GRID, HEADER, FOOTER)    */
+/* =================================== */
+
+/* --- Sistema de Grid 12 Colunas --- */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--spacing-sm);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-md); /* 24px */
+}
+
+/* Colunas Padrão (Desktop) */
+.col-12 { grid-column: span 12; }
+.col-8 { grid-column: span 8; }
+.col-6 { grid-column: span 6; }
+.col-4 { grid-column: span 4; }
+.col-3 { grid-column: span 3; }
+/* Adicione .col-1, .col-2, .col-5, etc. se precisar */
+
+/* --- Cabeçalho --- */
+.cabeçalho {
+  background-color: var(--cor-primaria);
+  padding: var(--spacing-md) 0; /* 24px */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.cabeçalho .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* (LOGO) Mude seu h1 no HTML para <p class="logo"> */
+.logo a {
+  color: var(--cor-branca);
+  font-size: var(--font-size-md); /* 28px */
+  font-weight: bold;
+}
+
+.navegacao {
+  display: flex; /* Isso será para o desktop */
+  gap: var(--spacing-md); /* 24px */
+}
+
+.navegacao a {
+  color: var(--cor-branca);
+  font-size: var(--font-size-sm); /* 16px */
+  font-weight: 500;
+  padding: var(--spacing-xs) var(--spacing-sm); /* 8px 16px */
+  border-radius: 5px;
+  transition: var(--transition);
+}
+
+.navegacao a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Rodapé --- */
+.rodape {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-branca);
+  padding: var(--spacing-xl) var(--spacing-md); /* 48px 24px */
+  text-align: center;
+  margin-top: var(--spacing-xxl); /* 64px */
+}
+
+.rodape-links ul, .rodape-redes ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md); /* 24px */
+  margin-bottom: var(--spacing-md);
+}
+
+.rodape-links a {
+  color: var(--cor-branca);
+  font-weight: 500;
+  font-size: var(--font-size-sm);
+}
+
+.rodape-redes img {
+  width: 24px;
+  height: 24px;
+  transition: var(--transition);
+}
+
+.rodape-redes a:hover img {
+  transform: scale(1.2);
+}
+
+/* =================================== */
+/* 4. COMPONENTES (BOTÕES, CARDS, FORM)*/
+/* =================================== */
+
+/* --- Botões (com 4 estados) --- */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md); /* 16px 24px */
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: var(--font-size-sm); /* 16px */
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+  margin-top: var(--spacing-md); /* 24px */
+}
+
+.btn-primario {
+  background-color: var(--cor-acao);
+  color: var(--cor-branca);
+}
+
+/* :hover (mouse em cima) */
+.btn-primario:hover {
+  background-color: var(--cor-acao-hover);
+  transform: translateY(-3px);
+}
+
+/* :focus (navegação por teclado) */
+.btn-primario:focus {
+  outline: 3px solid var(--cor-primaria);
+  outline-offset: 2px;
+}
+
+/* :active (enquanto está sendo clicado) */
+.btn-primario:active {
+  transform: translateY(-1px);
+}
+
+/* :disabled (botão desabilitado) */
+.btn-primario:disabled {
+  background-color: var(--cor-borda);
+  color: var(--cor-texto-suave);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --- Cards (Genérico) --- */
+.card {
+  background-color: var(--cor-branca);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Faz os cards terem a mesma altura no grid */
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: var(--spacing-md); /* 24px */
+  flex-grow: 1; /* Faz o corpo crescer para preencher espaço */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body p {
+  flex-grow: 1; /* Empurra o botão/link para baixo */
+}
+
+.card h3 {
+  font-size: var(--font-size-md);
+  margin-bottom: var(--spacing-sm);
+}
+
+/* --- Formulários (com Validação) --- */
+.form-section {
+  max-width: 800px;
+  margin: var(--spacing-xl) auto; /* 48px */
+  padding: var(--spacing-xl);
+  background-color: var(--cor-branca);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  border-top: 5px solid var(--cor-primaria);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin-bottom: var(--spacing-md);
+}
+
+legend {
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  color: var(--cor-primaria);
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-xs);
+  border-bottom: 2px solid var(--cor-fundo);
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: var(--spacing-xs);
+  font-weight: 500;
+  color: var(--cor-texto-secundario);
+  font-size: var(--font-size-sm);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: var(--spacing-sm); /* 16px */
+  font-size: var(--font-size-sm);
+  border: 1px solid var(--cor-borda);
+  border-radius: 5px;
+  background-color: var(--cor-fundo-input);
+  transition: var(--transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 3px rgba(78, 141, 124, 0.2);
+}
+
+/* Validação Visual */
+input:invalid:not(:placeholder-shown),
+select:invalid:not(:placeholder-shown) {
+  border-color: var(--cor-erro);
+  background-color: #FFF5F5;
+}
+
+input:valid:not(:placeholder-shown) {
+  border-color: var(--cor-sucesso);
+}
+
+.form-group-checkbox {
+  display: grid;
+  gap: var(--spacing-sm);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.form-group-checkbox label {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-weight: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 1.2em;
+  height: 1.2em;
+  accent-color: var(--cor-primaria);
+}
+
+.botao-submit {
+  /* Herda de .btn e .btn-primario */
+  width: 100%;
+  font-size: var(--font-size-base); /* 18px */
+  padding: var(--spacing-sm);
+}
+
+/* --- Badges/Tags (Novo Componente) --- */
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm); /* 8px 16px */
+  font-size: var(--font-size-xs); /* 14px */
+  font-weight: 600;
+  border-radius: 20px;
+  background-color: var(--cor-fundo);
+  color: var(--cor-primaria);
+  border: 1px solid var(--cor-primaria);
+}
+
+/* =================================== */
+/* 5. NAVEGAÇÃO RESPONSIVA (MOBILE)    */
+/* =================================== */
+/* (Requer HTML e JS para funcionar) */
+
+.menu-hamburger {
+  display: none; /* Escondido no desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-hamburger .linha {
+  width: 100%;
+  height: 3px;
+  background-color: var(--cor-branca);
+  border-radius: 2px;
+  transition: var(--transition);
+}
+
+/* Animação do "X" do hambúrguer */
+.menu-hamburger.active .linha:nth-child(1) {
+  transform: translateY(10.5px) rotate(45deg);
+}
+.menu-hamburger.active .linha:nth-child(2) {
+  opacity: 0;
+}
+.menu-hamburger.active .linha:nth-child(3) {
+  transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* Navegação Mobile (o menu que aparece) */
+.navegacao-mobile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  background-color: var(--cor-primaria);
+  position: absolute;
+  top: 72px; /* Altura do header (ajuste conforme necessário) */
+  left: 0;
+  width: 100%;
+  padding: var(--spacing-md);
+  
+  /* Escondido por padrão */
+  transform: translateY(-150%);
+  opacity: 0;
+  transition: var(--transition);
+  
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navegacao-mobile.active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.navegacao-mobile a {
+  font-size: var(--font-size-base);
+  width: 100%;
+  text-align: center;
+}
+
+/* =================================== */
+/* 6. PÁGINAS ESPECÍFICAS              */
+/* =================================== */
+
+/* --- Página Inicial --- */
+.sessao-em-colunas {
+  padding: var(--spacing-xxxl) 0; /* 80px */
+}
+
+/* DELETAR .coluna, .artigo-projeto, .depoimento, .membro-equipe 
+   pois todos foram substituídos pela classe .card 
+*/
+
+
+.titulo-secao {
+  font-size: var(--font-size-lg);
+  color: var(--cor-secundaria);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 3px solid var(--cor-primaria);
+  display: inline-block;
+}
+
+.sessao-projetos, .sessao-depoimentos, .sessao-informacoes {
+  padding: var(--spacing-xxxl) 0;
+  text-align: center;
+}
+
+/* Específico para Depoimentos */
+.depoimento img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto var(--spacing-sm);
+  display: block;
+  border: 4px solid var(--cor-fundo);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.depoimento h3 {
+  color: var(--cor-primaria);
+  font-size: var(--font-size-md);
+}
+
+
+/* --- Página Sobre --- */
+.titulo-principal-sobre {
+  font-size: var(--font-size-xxl); /* 48px */
+}
+.titulo-secao-sobre {
+  font-size: var(--font-size-lg); /* 36px */
+  color: var(--cor-primaria);
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+.sessao-valores {
+  margin-bottom: var(--spacing-xxl);
+}
+.sessao-valores p {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-md);
+  border-left: 4px solid var(--cor-primaria);
+}
+.sessao-historia {
+  background-color: var(--cor-branca);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin-bottom: var(--spacing-xxl);
+}
+.foto-equipe {
+  height: 280px;
+  object-position: center top;
+}
+/* --- Página Sobre --- */
+.dados-crescimento {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-branca);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  margin-bottom: var(--spacing-xxl);
+}
+
+/* ADICIONE ESTA NOVA REGRA ABAIXO:
+  Isso fará com que os itens dentro do container da seção "dados-crescimento"
+  fiquem em linha (display: flex) e se separem com um espaçamento (gap).
+*/
+.dados-crescimento .container {
+  display: flex;
+  flex-wrap: wrap; /* Permite quebrar a linha em telas muito pequenas */
+  justify-content: center; /* Centraliza os dois itens */
+  align-items: center;
+  gap: var(--spacing-xl); /* Adiciona um espaço entre os dois itens */
+}
+
+/* E adicione esta regra para remover a margem padrão dos parágrafos */
+.dados-crescimento .container p {
+  margin: 0;
+}
+
+/* --- Página Projetos --- */
+
+/* == CORREÇÃO 1: O 'display: flex' foi movido para o .container abaixo == */
+.sessao-inicio-projeto {
+  /* display: flex; <-- Removido daqui */
+  /* align-items: center; <-- Removido daqui */
+  /* gap: var(--spacing-xl); <-- Removido daqui */
+  /* padding: var(--spacing-xxl); <-- Removido daqui */
+  padding: var(--spacing-xxxl) 0; /* Aplicado padding vertical */
+  background-color: var(--cor-branca);
+  border-radius: var(--border-radius);
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-xxxl);
+}
+
+/* ESTA É A NOVA REGRA ADICIONADA PARA CORRIGIR O LAYOUT */
+.sessao-inicio-projeto .container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.texto-inicio {
+  flex: 1;
+}
+.titulo-principal-projeto {
+  font-size: var(--font-size-xl);
+  color: var(--cor-primaria);
+}
+.imagem-inicio {
+  flex-basis: 150px; /* <-- Mude de 300px para um valor menor. 150px é um bom tamanho "pequeno". */
+}
+
+/* Esta regra abaixo está perfeita, não mude */
+.img-inicio {
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.projeto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+  margin-bottom: var(--spacing-xxl);
+  background-color: var(--cor-branca);
+  padding: var(--spacing-xl);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+.projeto:nth-child(even) .img-projeto {
+  order: -1;
+}
+.titulo-projeto {
+  font-size: var(--font-size-md);
+  color: var(--cor-primaria);
+}
+.img-projeto {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+.projeto:hover .img-projeto {
+  transform: scale(1.05);
+}
+
+/* =================================== */
+/* 7. RESPONSIVIDADE (5 BREAKPOINTS)   */
+/* =================================== */
+
+/* Breakpoint 1: Laptops (menor que 1200px) */
+@media (max-width: 1200px) {
+  .container {
+    width: 95%;
+  }
+}
+
+/* Breakpoint 2: Tablets (menor que 992px) */
+@media (max-width: 992px) {
+  /* Grid de 12 colunas para Tablets */
+  .col-lg-4 { grid-column: span 4; }
+  .col-lg-6 { grid-column: span 6; }
+  .col-lg-12 { grid-column: span 12; }
+
+  /* Ajustes */
+  h1 { font-size: var(--font-size-xl); }
+  h2 { font-size: 32px; } /* Ajuste */
+
+  /* == CORREÇÃO 2: A regra abaixo estava quebrando o layout em 992px, 
+     ela foi movida para o breakpoint de 768px. 
+     Em vez disso, mantemos o 'flex-direction: row' aqui. */
+  .sessao-inicio-projeto .container {
+    flex-direction: row; /* Mantém lado a lado no tablet */
+    text-align: left;
+  }
+  /* A regra antiga de "column" foi removida daqui */
+
+  .projeto, .projeto:nth-child(even) {
+    grid-template-columns: 1fr;
+  }
+  .projeto .img-projeto,
+  .projeto:nth-child(even) .img-projeto {
+    order: -1;
+  }
+}
+
+/* Breakpoint 3: Tablets (menor que 768px) */
+@media (max-width: 768px) {
+  /* Grid de 12 colunas para Tablets Menores */
+  .col-md-6 { grid-column: span 6; }
+  .col-md-8 { grid-column: span 8; }
+  .col-md-12 { grid-column: span 12; }
+
+  /* ADICIONE ISTO: */
+  .sessao-inicio-projeto .container {
+     flex-direction: column; /* Agora sim, quebra para o celular */
+     text-align: center;
+  }
+
+  /* == CORREÇÃO 3: A CHAVE } ESTAVA AQUI, FOI MOVIDA PARA O FIM DO BLOCO == */
+
+  /* Ativa o Menu Hambúrguer */
+  .navegacao {
+    display: none; /* Esconde menu desktop */
+  }
+  .menu-hamburger {
+    display: flex; /* Mostra botão hambúrguer */
+  }
+
+  body {
+    font-size: var(--font-size-sm); /* 16px */
+  }
+  h1 { font-size: 38px; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 24px; }
+  
+  .sessao-em-colunas,
+  .sessao-projetos, 
+  .sessao-depoimentos, 
+  .sessao-informacoes {
+    padding: var(--spacing-xxl) 0; /* 64px */
+  }
+
+} /* <== A CHAVE DE FECHAMENTO DO 768px FOI MOVIDA PARA CÁ */
+
+
+/* Breakpoint 6: Telas Extra-Grandes (maior que 1400px) */
+@media (min-width: 1400px) {
+  .container {
+    /* A largura máxima padrão era 1200px. */
+    max-width: 1320px; /* Aumenta a largura do conteúdo */
+  }
+
+  /* Opcional: Aumentar a fonte base para melhor legibilidade em telas grandes */
+  body {
+    font-size: 19px; 
+  }
+}
+
+/* Breakpoint 7: Celulares Extra-Pequenos (menor que 375px) */
+@media (max-width: 375px) {
+  /* Reduz a fonte base para caber mais texto */
+  body {
+    font-size: var(--font-size-sm); /* De 18px/16px para 16px */
+  }
+
+  /* Reduz os títulos principais */
+  h1, .titulo-principal-sobre {
+    font-size: 28px; /* Era 32px no breakpoint anterior */
+  }
+  
+  h2, .titulo-secao {
+    font-size: 22px; /* Era 24px */
+  }
+  
+  /* Reduz o padding dos cards e formulários para ganhar espaço */
+  .card-body, .form-section {
+    padding: var(--spacing-sm); /* De 24px/32px para 16px */
+  }
+
+  /* Reduz o botão principal */
+  .btn, .botao-submit {
+    padding: var(--spacing-sm); /* 16px */
+    font-size: var(--font-size-sm); /* 16px */
+  }
+}
+/* =================================== */
+/* 6A. COMPONENTE MODAL (AVISO)        */
+/* =================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2000;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Escondido por padrão */
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-container {
+  background-color: var(--cor-branca);
+  border-radius: var(--border-radius);
+  padding: var(--spacing-lg);
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+  /* Efeito de "zoom" ao aparecer */
+  transform: scale(0.9);
+  transition: var(--transition);
+}
+
+.modal-overlay.active .modal-container {
+  transform: scale(1);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--cor-borda);
+  padding-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.modal-titulo {
+  font-size: var(--font-size-lg);
+  color: var(--cor-primaria);
+}
+
+.modal-body {
+  font-size: var(--font-size-base);
+  margin-bottom: var(--spacing-lg);
+}
+
+.modal-footer {
+  text-align: right;
+}
