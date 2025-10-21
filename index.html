@@ -4,165 +4,232 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Plataforma da ONG Esperança Viva que conecta voluntários, divulga projetos sociais e promove impacto social no Brasil." />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Esperança Viva</title>
   </head>
   <body>
     <header class="cabeçalho">
-      <h1><a href="index.html">Esperança Viva</a></h1>
-      <nav class="navegacao">
-        <a href="index.html">Página Inicial</a>
-        <a href="sobre.html">Sobre</a>
-        <a href="projetos.html">Projetos Sociais</a>
-        <a href="cadastro.html">Cadastro</a>
+      <div class="container">
+        <p class="logo"><a href="index.html">Esperança Viva</a></p>
+        
+        <nav class="navegacao">
+          <a href="index.html" data-page="index">Página Inicial</a>
+          <a href="sobre.html" data-page="sobre">Sobre</a>
+          <a href="projetos.html" data-page="projetos">Projetos Sociais</a>
+          <a href="cadastro.html" data-page="cadastro">Cadastro</a>
+        </nav>
+
+        <button class="menu-hamburger">
+          <span class="linha"></span>
+          <span class="linha"></span>
+          <span class="linha"></span>
+        </button>
+
+      </div> 
+      
+      <nav class="navegacao-mobile">
+        <a href="index.html" data-page="index">Página Inicial</a>
+        <a href="sobre.html" data-page="sobre">Sobre</a>
+        <a href="projetos.html" data-page="projetos">Projetos Sociais</a>
+        <a href="cadastro.html" data-page="cadastro">Cadastro</a>
       </nav>
     </header>
-    <!--Parte principal-->
-    <main>
-      <section class="sessao-apresentacao">
-        <h2 class="titulo-secao">
-          Conectando o terceiro setor à transformação digital
-        </h2>
-        <p>
-          Com mais de 820 mil organizações atuando em todo o Brasil, o impacto
-          social depende cada vez mais da presença digital. Nossa plataforma foi
-          desenvolvida para fortalecer ONGs, ampliar seu alcance e engajar
-          voluntários.
-        </p>
+    
+    <main id="main-content">
+      
+      <section class="sessao-em-colunas">
+        <div class="container">
+          <div class="row">
+
+            <div class="col-4 col-md-6 col-sm-12">
+              <article class="card">
+                <div class="card-body">
+                  <h1 class="titulo-secao">
+                    Conectando o terceiro setor à transformação digital
+                  </h1>
+                  <p>
+                    Com mais de 820 mil organizações atuando em todo o Brasil, o impacto
+                    social depende cada vez mais da presença digital. Nossa plataforma foi
+                    desenvolvida para fortalecer ONGs, ampliar seu alcance e engajar
+                    voluntários.
+                  </p>
+                </div>
+              </article>
+            </div> 
+            
+            <div class="col-4 col-md-6 col-sm-12">
+              <article class="card">
+                <div class="card-body">
+                  <h2 class="titulo-secao">Uma plataforma feita para ONGs crescerem</h2>
+                  <p>
+                    Desenvolvemos esta plataforma pensando nas necessidades reais das
+                    organizações sociais: divulgação de projetos, captação de recursos,
+                    transparência e engajamento de voluntários.
+                  </p>
+                  <a href="sobre.html" data-page="sobre" class="btn btn-primario spa-link">Saiba mais</a> 
+                </div>
+              </article>
+            </div> 
+            
+            <div class="col-4 col-md-12 col-sm-12"> 
+              <article class="card">
+                <div class="card-body">
+                  <h2 class="titulo-secao">O que oferecemos</h2>
+                  <ul class="lista-servicos">
+                    <li>Site com navegação simples</li>
+                    <li>Formulários interativos para voluntariado, doações e contato</li>
+                    <li>Galeria de fotos e vídeos institucionais</li>
+                    <li>Blog com notícias e atualizações</li>
+                    <li>Gráficos informativos sobre impacto social</li>
+                  </ul>
+                  <a href="cadastro.html" data-page="cadastro" class="btn btn-primario spa-link">Quero ser voluntário</a> 
+                </div>
+              </article>
+            </div> 
+            
+          </div> 
+        </div> 
       </section>
-      <!--Objetivo da Ong-->
-      <section class="sessao-plataforma">
-        <h2 class="titulo-secao">Uma plataforma feita para ONGs crescerem</h2>
-        <p>
-          Desenvolvemos esta plataforma pensando nas necessidades reais das
-          organizações sociais: divulgação de projetos, captação de recursos,
-          transparência e engajamento de voluntários.
-        </p>
-        <a href="sobre.html" class="botao-saiba">Saiba mais</a>
-      </section>
-      <!--Ofertas da ONG-->
-      <section class="sessao-servicos">
-        <h2 class="titulo-secao">O que oferecemos</h2>
-        <ul class="lista-servicos">
-          <li>Site com navegação simples</li>
-          <li>Formulários interativos para voluntariado, doações e contato</li>
-          <li>Galeria de fotos e vídeos institucionais</li>
-          <li>Blog com notícias e atualizações</li>
-          <li>Gráficos informativos sobre impacto social</li>
-        </ul>
-        <a href="cadastro.html" class="botao-voluntario">Quero ser voluntário</a>
-      </section>
-      <!--Projetos em destaque-->
+      
       <section class="sessao-projetos">
-        <h2 class="titulo-secao">Nossos Projetos em Destaque</h2>
+        <div class="container">
+          <h2 class="titulo-secao">Nossos Projetos em Destaque</h2>
 
-        <article class="artigo-projeto">
-          <img src="assets/images/educacao.jpg" alt="Uma lâmpada brilhando em cima do livro" />
-          <h3>Projeto Educar para o Futuro</h3>
-          <p>
-            Oferece aulas de reforço escolar e inclusão digital para crianças e
-            adolescentes em comunidades carentes.
-          </p>
-          <p class="local"><strong>Local:</strong> São Paulo - SP</p>
-        </article>
-
-        <article class="artigo-projeto">
-          <img src="assets/images/solidario.png" alt="Sorriso alegre de uma criança comendo" />
-          <h3>Projeto Alimentação Solidária</h3>
-          <p>
-            Distribui cestas básicas e refeições para famílias em situação de
-            vulnerabilidade alimentar.
-          </p>
-          <p class="local"><strong>Local:</strong> Recife - PE</p>
-        </article>
-
-        <article class="artigo-projeto">
-          <img src="assets/images/coracao.jpg" alt="Mão segurando um coração" />
-          <h3>Projeto Mãos que Ajudam</h3>
-          <p>
-            Capacita voluntários para reformas em escolas, creches e centros
-            comunitários em regiões periféricas.
-          </p>
-          <p class="local"><strong>Local:</strong> Belo Horizonte - MG</p>
-        </article>
-
-        <a href="projetos.html" class="botao-ver-todos">Ver Todos os Projetos</a>
+          <div class="row">
+            
+            <div class="col-4 col-md-6 col-sm-12">
+              <article class="card">
+                <img src="assets/images/educacao.jpg" alt="Uma lâmpada brilhando em cima do livro" class="card-img-top" />
+                <div class="card-body">
+                  <h3>Projeto Educar para o Futuro</h3>
+                  <p>
+                    Oferece aulas de reforço escolar e inclusão digital para crianças e
+                    adolescentes em comunidades carentes.
+                  </p>
+                  <p class="local"><strong>Local:</strong> São Paulo - SP</p>
+                </div>
+              </article>
+            </div> 
+            
+            <div class="col-4 col-md-6 col-sm-12">
+              <article class="card">
+                <img src="assets/images/solidario.png" alt="Sorriso alegre de uma criança comendo" class="card-img-top" />
+                <div class="card-body">
+                  <h3>Projeto Alimentação Solidária</h3>
+                  <p>
+                    Distribui cestas básicas e refeições para famílias em situação de
+                    vulnerabilidade alimentar.
+                  </p>
+                  <p class="local"><strong>Local:</strong> Recife - PE</p>
+                </div>
+              </article>
+            </div> 
+            
+            <div class="col-4 col-md-6 col-sm-12">
+              <article class="card">
+                <img src="assets/images/coracao.jpg" alt="Mão segurando um coração" class="card-img-top" />
+                <div class="card-body">
+                  <h3>Projeto Mãos que Ajudam</h3>
+                  <p>
+                    Capacita voluntários para reformas em escolas, creches e centros
+                    comunitários em regiões periféricas.
+                  </p>
+                  <p class="local"><strong>Local:</strong> Belo Horizonte - MG</p>
+                </div>
+              </article>
+            </div> 
+            
+          </div> 
+          <a href="projetos.html" data-page="projetos" class="btn btn-primario spa-link">Ver Todos os Projetos</a> 
+        </div> 
       </section>
-      <!--Depoimentos de clientes-->
+      
       <section class="sessao-depoimentos">
-        <h2 class="titulo-secao">Depoimentos</h2>
-
-        <article class="depoimento">
-          <img src="assets/images/homem1.png" alt="Foto de João Pereira, voluntário" />
-          <h3>João Pereira</h3>
-          <p>
-            Distribuir cestas básicas através do Projeto Alimentação Solidária
-            me mostrou como pequenas ações podem fazer uma grande diferença na
-            vida das famílias.
-          </p>
-        </article>
-
-        <article class="depoimento">
-          <img src="assets/images/mulher1.png" alt="Foto de Maria Silva, voluntária" />
-          <h3>Maria Silva</h3>
-          <p>
-            Participar do Projeto Educar para o Futuro mudou a minha forma de
-            ver a educação. Ajudar crianças a aprender e se desenvolver é
-            extremamente gratificante!
-          </p>
-        </article>
-
-        <article class="depoimento">
-          <img src="assets/images/mulher2.png" alt="Foto de Ana Costa, voluntária" />
-          <h3>Ana Costa</h3>
-          <p>
-            O Projeto Mãos que Ajudam me permitiu usar minhas habilidades para
-            melhorar escolas e creches na comunidade. É incrível ver o impacto
-            real que podemos causar!
-          </p>
-        </article>
+        <div class="container">
+          <h2 class="titulo-secao">Depoimentos</h2>
+          
+          <div class="row">
+          
+            <div class="col-4 col-md-6 col-sm-12">
+              <article class="depoimento">
+                <img src="assets/images/homem1.png" alt="Foto de João Pereira, voluntário" />
+                <h3>João Pereira</h3>
+                <p>
+                  Distribuir cestas básicas através do Projeto Alimentação Solidária
+                  me mostrou como pequenas ações podem fazer uma grande diferença na
+                  vida das famílias.
+                </p>
+              </article>
+            </div> 
+            
+            <div class="col-4 col-md-6 col-sm-12">
+              <article class="depoimento">
+                <img src="assets/images/mulher1.png" alt="Foto de Maria Silva, voluntária" />
+                <h3>Maria Silva</h3>
+                <p>
+                  Participar do Projeto Educar para o Futuro mudou a minha forma de
+                  ver a educação. Ajudar crianças a aprender e se desenvolver é
+                  extremamente gratificante!
+                </p>
+              </article>
+            </div> 
+            
+            <div class="col-4 col-md-6 col-sm-12">
+              <article class="depoimento">
+                <img src="assets/images/mulher2.png" alt="Foto de Ana Costa, voluntária" />
+                <h3>Ana Costa</h3>
+                <p>
+                  O Projeto Mãos que Ajudam me permitiu usar minhas habilidades para
+                  melhorar escolas e creches na comunidade. É incrível ver o impacto
+                  real que podemos causar!
+                </p>
+              </article>
+            </div> 
+            
+          </div> 
+        </div> 
       </section>
-      <!--Dados-->
+      
       <section class="sessao-informacoes">
-        <h2 class="titulo-secao">O poder do terceiro setor no Brasil</h2>
-        <p>
-          Movimentando mais de R$ 15 bilhões por ano e empregando milhões, o
-          terceiro setor é uma força de transformação. Nossa missão é fortalecer
-          essa rede com ferramentas digitais acessíveis.
-        </p>
+        <div class="container">
+          <h2 class="titulo-secao">O poder do terceiro setor no Brasil</h2>
+          <p>
+            Movimentando mais de R$ 15 bilhões por ano e empregando milhões, o
+            terceiro setor é uma força de transformação. Nossa missão é fortalecer
+            essa rede com ferramentas digitais acessíveis.
+          </p>
+        </div> 
       </section>
+      
     </main>
-    <!--Rodapé-->
+    
     <footer class="rodape">
-      <!--links-->
-      <nav class="rodape-links">
-        <ul>
-          <li><a href="projetos.html"> Projetos Sociais</a></li>
-          <li><a href="sobre.html"> Sobre</a></li>
-          <li><a href="cadastro.html"> Cadastro</a></li>
-        </ul>
-      </nav>
-      <!--Redes sociais-->
-      <nav class="rodape-redes">
-        <ul>
-          <li>
-            <a href="https://www.instagram.com/f1avio.dsg">
-              <img src="assets/images/instagram.png" alt="Instagram Logo" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.facebook.com/Nekoziila/">
-              <img src="assets/images/facebook.png" alt="Facebook Logo" />
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/flavio-vieira-/">
-              <img src="assets/images/linkedin.png" alt="Linkedin Logo" />
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <p>© 2025 Esperança Viva. Todos os direitos reservados.</p>
+      <div class="container">
+        <nav class="rodape-links">
+          <ul>
+             <li><a href="projetos.html" data-page="projetos" class="spa-link">Projetos Sociais</a></li>
+            <li><a href="sobre.html" data-page="sobre" class="spa-link">Sobre</a></li>
+            <li><a href="cadastro.html" data-page="cadastro" class="spa-link">Cadastro</a></li>
+          </ul>
+        </nav>
+        <nav class="rodape-redes">
+          <ul>
+            <li><a href="https://www.instagram.com/f1avio.dsg" target="_blank" rel="noopener noreferrer"><img src="assets/images/instagram.png" alt="Instagram Logo" /></a></li>
+            <li><a href="https://www.facebook.com/Nekoziila/" target="_blank" rel="noopener noreferrer"><img src="assets/images/facebook.png" alt="Facebook Logo" /></a></li>
+            <li><a href="https://www.linkedin.com/in/flavio-vieira-/" target="_blank" rel="noopener noreferrer"><img src="assets/images/linkedin.png" alt="Linkedin Logo" /></a></li>
+          </ul>
+        </nav>
+        
+        <div class="contato-info">
+          <p>Email: <a href="mailto:contato@esperancaviva.org">contato@esperancaviva.org</a></p>
+          <p>Telefone: (55) 99999-8888</p>
+        </div>
+        
+        <p>© 2025 Esperança Viva. Todos os direitos reservados.</p>
+      </div> 
     </footer>
+    
+    <script src="js/script.js"></script>
+
   </body>
 </html>
